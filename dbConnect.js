@@ -2,7 +2,7 @@ const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
 // Connect to DB
 const connectToDB = () => {
-  const mongoDBURL = process.env.mongoDBURL;
+  const mongoDBURL = process.env.mongoDBURL + 'retryWrites=true';
   mongoose.connect(mongoDBURL, {
   useNewUrlParser: true,
   reconnectTries: 100,

@@ -1004,52 +1004,60 @@ exports.getDashboardRoute = (req, res) => {
     if(req.isAuthenticated()) {
       // Clean searchStr
       req.check('searchStr', '').trim().escape();
-      req.check('searchStr', 'Search must contain numbers and letters only').match();
-      let friendsListStr = '';
-      let username = (String(req.session.passport.user)).toLowerCase();
-      // Find and create an array of friends, use the array to exclude people already included in the users friends list
-      friendCreation.findOne({'usernameLowerCase': username}, function(err, frList) {
-        if(err) {return res.json({'success':false, 'errMSG': 'Unable to locate friends list'});}
-        else if(frList) {
-          try {
+      req.check('searchStr', 'Search must contain numbers and letters only').matches(/^[A-Za-z0-9]+$/i);
+      req.check('searchStr', 'Search must not be empty').not().isEmpty();
+      req.check('searchStr', 'Search must be fewer than 50 characters').isLength({min: 1, max: 51});
+      let validationErr = req.validationErrors();
 
-            // Create string using friendsList results
-            friendsListStr = String(frList.friends);
-            let friendsListArr = friendsListStr.split(',');
-            
-            // Check if friends list has at least one value, if not exclude the $nin check
-            if(friendsListArr[0] == '' || friendsListArr[0] == null || friendsListArr[0] == undefined) {
-              // Display every match, no need to check for friends already in your friends list
-              // Display every match excluding those already in friends list and 'Empty' default value
-              AccountCreation.find({$and: [{'view': 'Public'}, {'name': {$ne: 'Empty'}}]
-              }, {username: 0, address1: 0, address2: 0, age: 0, city: 0, email: 0, state: 0, zip: 0}, {limit: 1000}, function(err, data) {
-              if(err) {console.log(err);res.json({'success': false, errMSG: err.message});}
-              else if(data) {
-                if(Object.keys(data).length > 0) {
-                  console.log(data);
-                  res.json({'success': true, frFindResults: data});
+      // Check if validation errors are present, if so do not process request and return error
+      if(validationErr) {
+        return res.json({'success': false, 'errMSG': 'There was a validation error, please try again'});
+      } else {
+        let friendsListStr = '';
+        let username = (String(req.session.passport.user)).toLowerCase();
+        // Find and create an array of friends, use the array to exclude people already included in the users friends list
+        friendCreation.findOne({'usernameLowerCase': username}, function(err, frList) {
+          if(err) {return res.json({'success':false, 'errMSG': 'Unable to locate friends list'});}
+          else if(frList) {
+            try {
+
+              // Create string using friendsList results
+              friendsListStr = String(frList.friends);
+              let friendsListArr = friendsListStr.split(',');
+              
+              // Check if friends list has at least one value, if not exclude the $nin check
+              if(friendsListArr[0] == '' || friendsListArr[0] == null || friendsListArr[0] == undefined) {
+                // Display every match, no need to check for friends already in your friends list
+                // Display every match excluding those already in friends list and 'Empty' default value
+                AccountCreation.find({$and: [{'view': 'Public'}, {'name': {$ne: 'Empty'}}]
+                }, {username: 0, address1: 0, address2: 0, age: 0, city: 0, email: 0, state: 0, zip: 0}, {limit: 1000}, function(err, data) {
+                if(err) {console.log(err);res.json({'success': false, errMSG: err.message});}
+                else if(data) {
+                  if(Object.keys(data).length > 0) {
+                    console.log(data);
+                    res.json({'success': true, frFindResults: data});
+                  } else {res.json({'success': false, errMSG: 'No entries found'});}
                 } else {res.json({'success': false, errMSG: 'No entries found'});}
-              } else {res.json({'success': false, errMSG: 'No entries found'});}
-              });
-            } else {
-              // Display every match excluding those already in friends list and 'Empty' default value
-              AccountCreation.find({$and: [{'view': 'Public'}, {'name': {$ne: 'Empty'}}, {'_id': {$nin: friendsListArr}}]
-              }, {username: 0, address1: 0, address2: 0, age: 0, city: 0, email: 0, state: 0, zip: 0}, {limit: 1000}, function(err, data) {
-              if(err) {console.log(err);res.json({'success': false, errMSG: err.message});}
-              else if(data) {
-                if(Object.keys(data).length > 0) {
-                  console.log(data);
-                  res.json({'success': true, frFindResults: data});
+                });
+              } else {
+                // Display every match excluding those already in friends list and 'Empty' default value
+                AccountCreation.find({$and: [{'view': 'Public'}, {'name': {$ne: 'Empty'}}, {'_id': {$nin: friendsListArr}}]
+                }, {username: 0, address1: 0, address2: 0, age: 0, city: 0, email: 0, state: 0, zip: 0}, {limit: 1000}, function(err, data) {
+                if(err) {console.log(err);res.json({'success': false, errMSG: err.message});}
+                else if(data) {
+                  if(Object.keys(data).length > 0) {
+                    console.log(data);
+                    res.json({'success': true, frFindResults: data});
+                  } else {res.json({'success': false, errMSG: 'No entries found'});}
                 } else {res.json({'success': false, errMSG: 'No entries found'});}
-              } else {res.json({'success': false, errMSG: 'No entries found'});}
-              });
-            }
+                });
+              }
 
-          } catch {return res.json({'success': false, 'errMSG': 'Unable to parse friend data lookup'});}
-        } else {return res.json({'success': false, 'errMSG': 'Unable to locate friend records'});}
-      });
+            } catch {return res.json({'success': false, 'errMSG': 'Unable to parse friend data lookup'});}
+          } else {return res.json({'success': false, 'errMSG': 'Unable to locate friend records'});}
+        });
+      }
 
-      
     }
   }
   // FRIENDS LIST ADD
