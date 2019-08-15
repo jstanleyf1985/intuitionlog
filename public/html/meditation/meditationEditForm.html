@@ -1,0 +1,95 @@
+<form id="addMeditateInfo" class="block center" action='https://www.intuitionlog.com/dashboard/meditation' method='post'>
+  <h3 class='nowEditing'>Now editing meditation ${meditationDataEdited.data.meditationName} </h3>
+
+  <div class='hidden'>
+    <input id='_id' type='text' name='_id' value='${meditationDataEdited.data._id}'>
+  </div>
+
+  <div class='input name'>
+    <label for='name'>Name: </label>
+    <input type='text' id='name' name='name' placeholder='Enter the name (optional)' value='${meditationDataEdited.data.meditationName}'>
+    <span>Enter your meditation name. If no name is provided one will be generated.</span>
+  </div>
+
+  <div class='input type'>
+    <label for='meditationtype'>Type: </label>
+    <select id='meditationtype' name='meditationtype' value='${meditationDataEdited.data.meditationType}'>
+      <option value='Focus'>Focus</option>
+      <option value='Guided'>Guided</option>
+      <option value='LovingKindness'>Loving Kindness</option>
+      <option value='Mantra'>Mantra</option>
+      <option value='Mindfulness'>Mindfulness</option>
+      <option value='Monitoring'>Monitoring</option>
+      <option value='Presence'>Presence</option>
+      <option value='Qigong'>Qigong</option>
+      <option value='Selfinquiry'>Self-Inquiry</option>
+      <option value='Sufi'>Sufi</option>
+      <option value='Taoist'>Taoist</option>
+      <option value='Transcendental'>Transcendental</option>
+      <option value='Vipassana'>Vipassana</option>
+      <option value='Walking'>Walking</option>
+      <option value='Yoga'>Yoga</option>
+      <option value='Zazen'>Zazen</option>
+    </select>
+  </div>
+
+  <div id='meditationInfo'>
+
+  </div>
+
+  <div class='input duration'>
+    <label for='duration'>Duration: </label>
+    <input type='number' id='duration' name='duration' placeholder='Enter the duration' required='required' min='0' max='1440' step='1' value='${meditationDataEdited.data.meditationDuration}'>
+    <span>Enter your meditation time in minutes</span>
+  </div>
+
+  <div class='input'>
+    <div id="meditationRatingWrapper">
+        <label for='meditationRating' id='meditatingRatingLabel'>Rating: </label>
+        <div id='meditationRating'>
+          <img id='star1' class='star star1' src='https://www.intuitionlog.com/img/star1.png'>
+          <img id='star2' class='star star2' src='https://www.intuitionlog.com/img/star2.png'>
+
+          <img id='star3' class='star star3' src='https://www.intuitionlog.com/img/star1.png'>
+          <img id='star4' class='star star4' src='https://www.intuitionlog.com/img/star2.png'>
+
+          <img id='star5' class='star star5' src='https://www.intuitionlog.com/img/star1.png'>
+          <img id='star6' class='star star6' src='https://www.intuitionlog.com/img/star2.png'>
+
+          <img id='star7' class='star star7' src='https://www.intuitionlog.com/img/star1.png'>
+          <img id='star8' class='star star8' src='https://www.intuitionlog.com/img/star2.png'>
+
+          <img id='star9' class='star star9' src='https://www.intuitionlog.com/img/star1.png'>
+          <img id='star10' class='star star10' src='https://www.intuitionlog.com/img/star2.png'>
+        </div>
+        <button id='resetStars' class='block center bright colorMedium'>Reset Rating</button>
+    </div>
+
+  <div class='input date'>
+    <label for='date'>Date</label>
+    <input type='date' id='date' name='date'>
+
+
+    <label for='time'>Time</label>
+    <input type='time' id='time' name='time'>
+  </div>
+
+  <div id='ratingWrapper' class='input'>
+    <label for='rating'>Rating: </label>
+    <input type='number' id='rating' name='rating' min='0' max='5' step='0.5' value='${meditationDataEdited.data.meditationRating}'>
+  </div>
+
+  <div class='input notes'>
+    <label for='notes'>Notes</label>
+    <textarea rows='4' cols='50' id='notes' name='notes' placeholder='Enter your notes here.' value='${meditationDataEdited.data.meditationNotes}'></textarea>
+  </div>
+
+  <button class='blueBTN' id='submitMeditation' name='submit' value='submit'>Save Changes</button>
+
+  <div id="meditationErrors">
+
+  </div>
+
+  <div id="meditationWarnings">
+
+  </div>

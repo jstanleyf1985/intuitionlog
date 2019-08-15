@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+<main class='block center'>
+  <div id='userRecoveryFormWrapper' class='block center'>
+    <form id="userRecoveryForm" class="block center" action='/recoverusername' method='post'>
+    <h3>Username Recover</h3>
+    <div class='input'>
+      <label for='email'>Email: </label>
+      <input type='text' id='email' name='email' placeholder='Enter your account email address'>
+    </div>
+
+    <button type='submit' name='submit' value='submit'>Send recovery email</button>
+    <div id='loginBTN'>
+      <a href='https://www.intuitionlog.com'>Return to Login</a>
+    </div>
+
+  </form>
+  </div>
+
+  <!-- Messages -->
+  <div class="errListContainer">
+    <% if(userRecoveryErr) { %>
+      <% if(typeof userRecoveryErr == 'string') { %>
+        <% if(userRecoveryErr !== 'successful') { %>
+          <ul>
+            <li><%- userRecoveryErr %></li>
+          </ul>
+        <% } %>
+      <% } else { %>
+        <% if(typeof userRecoveryErr == 'object') { %>
+          <ul>
+            <% userRecoveryErr.forEach((recoveryErr) => { %>
+              <li><%- recoveryErr.msg %><li>
+            <% }); %>
+          </ul>
+        <% } %>
+      <% } %>
+    <% } %>
+  </div>
+
+  <div class="successListContainer">
+    <% if(userRecoveryErr) { %>
+      <% if(typeof userRecoveryErr == 'string') { %>
+        <% if(userRecoveryErr == 'successful') { %> 
+          <ul>
+            <li>Username successfully sent!</li>
+          </ul>
+        <% }%>
+      <% } %>
+    <% } %>
+  </div>
+</main>
+<%- include('partials/footer') %>

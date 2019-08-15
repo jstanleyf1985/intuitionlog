@@ -1,0 +1,84 @@
+<%- include('partials/header') %>
+<main class='block center'>
+  <div id='loginFormWrapper' class='block center'>
+    <form id="loginForm" class="block center" action='/' method='post'>
+    <h3>Login to IntuitionLog</h3>
+    <div class='input'>
+      <label for='username'>Username: </label>
+      <input type='text' id='username' name='username' placeholder='Enter username'>
+    </div>
+
+    <div class='input'>
+      <label for='password'>Password: </label>
+      <input type='password' id='password' name='password' placeholder='Enter password'>
+    </div>
+
+    <button class='blueBTN' type='submit' name='submit' value='submit'>Login</button>
+
+    <div id='registerBTN'>
+      <a class='blueBTN' href='https://www.intuitionlog.com/register'>Create a free account</a>
+    </div>
+
+    <div id='accountRecovery'>
+      <a class='greyBTN' href='https://www.intuitionlog.com/passwordsend'>Reset Password</a>
+      <a class='greyBTN' href='https://www.intuitionlog.com/recoverusername'>Recover Username</a>
+    </div>
+  </form>
+  </div>
+
+  <div class="errListContainer">
+
+    <% if(passwordResetPostErr) { %>
+      <% if(passwordResetPostErr == 'success') { %>
+        <ul>
+          <li class="successMsg">Password successfully reset</li>
+        </ul>
+      <% } else { %>
+        <ul>
+          <li class="errMsg"><%- passwordResetPostErr %></li>
+        </ul>
+      <% } %>
+    <% } %>
+
+    <% if(passwordResetErr) { %>
+      <% if(passwordResetErr == 'success') { %>
+        <ul>
+          <li class="successMsg">Password token authenticated, redirecting ...</li>
+        </ul>
+      <% } else { %>
+        <ul>
+          <li class="errMsg"><%- passwordResetErr %></li>
+        </ul>
+      <% } %>
+    <% } %>
+
+    <% if(loginErrMsg) { %>
+      <ul>
+        <li class="errMsg"><%- loginErrMsg %></li>
+    </ul>
+    <% } %>
+
+    <% if(loginErrors) { %>
+      <ul>
+        <% loginErrors.forEach(function(loginError) { %>
+          <li class="errMsg"><%- loginError.msg %></li>
+        <% }); %>
+      </ul>
+    <% } %>
+  </div>
+
+  <div class="successListContainer">
+    <% if(emailVerifyMsg) { %>
+      <% if(emailVerifyMsg == 'success') { %>
+        <ul>
+          <li class="successMsg">Account successfully validated</li>
+        </ul>
+      <% } else { %>
+        <ul>
+          <li class="errMsg"><%- emailVerifyMsg %></li>
+        </ul>
+      <% } %>
+    <% } %>
+  </div>
+</main>
+<%- include('partials/footer') %>

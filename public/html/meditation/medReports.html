@@ -1,0 +1,189 @@
+<section id='medReportSection' class='center block marginZero paddingZero'>
+  <div class='center block marginZero'>
+    <h2 id='medReportMainH' class='block center'>Report Generator</h2>
+    <h3 class='block center paddingZero'>Report generator creates a listing of matching meditations based on the filters selected below. <em>Date is required, anything left empty will include minimum and maximum ranges.</h3>
+    <form id='reportGen' method='POST' action='https://www.intuitionlog.com/dashboard/meditation/reports' class='block paddingZero'>
+      <label for='type'>Type: </label>
+      <div id='medReportType' name='medReportType' class='multiselect'>
+        <h2 class='block center paddingZero'>Select a meditation type</h2>
+        <div class="selectBox">
+          <select>
+            <option>Select type(s)</option>
+          </select>
+          <div class="overSelect"></div>
+        </div>
+
+        <div id="checkboxes">
+              <label for="all">
+                <input type='checkbox' id='all' name='all'/><span>Select All</span>
+              </label>
+
+              <label for="focus">
+                <input type='checkbox' id='focus' name='focus'/><span>Focus</span>
+              </label>
+      
+              <label for="guided">
+                <input type='checkbox' id='guided' name='guided'/><span>Guided</span>
+              </label>
+              
+              <label for="lovingkindness">
+                <input type='checkbox' id='lovingkindness' name='lovingkindness'/><span>Loving Kindness</span>
+              </label>
+              
+              <label for="mantra">
+                <input type='checkbox' id='mantra' name='mantra'/><span>Mantra</span>
+              </label>
+              
+              <label for="mindfulness">
+                <input type='checkbox' id='mindfulness' name='mindfulness'/><span>Mindfulness</span>
+              </label>
+      
+              <label for="monitoring">
+                <input type='checkbox' id='monitoring' name='monitoring'/><span>Monitoring</span>
+              </label>
+              
+              <label for="presence">
+                <input type='checkbox' id='presence' name='presence'/><span>Presence</span>
+              </label>
+              
+              <label for="selfinquiry">
+                <input type='checkbox' id='selfinquiry' name='selfinquiry'/><span>Self-Inquiry</span>
+              </label>
+              
+              <label for="sufi">
+                <input type='checkbox' id='sufi' name='sufi' /><span>Sufi</span>
+              </label>
+              
+              <label for="taoist">
+                <input type='checkbox' id='taoist' name='taoist'/><span>Taoist</span>
+              </label>
+              
+              <label for="transcendental">
+                <input type='checkbox' id='transcendental' name='transcendental'/><span>Transcendental</span>
+              </label>
+              
+              <label for="vipassana">
+                <input type='checkbox' id='vipassana' name='vipassana'/><span>Vipassana</span>
+              </label>
+              
+              <label for="walking">
+                <input type='checkbox' id='walking' name='walking' /><span>Walking</span>
+              </label>
+              
+              <label for="yoga">
+                <input type='checkbox' id='yoga' name='yoga'/><span>Yoga</span>
+              </label>
+              
+              <label for="zazen">
+                <input type='checkbox' id='zazen' name='zazen'/><span>Zazen</span>
+              </label>
+
+              <label id='doneBTN' for="done">
+                <button>Done</button>
+              </label>
+        </div>
+        
+        <!-- Date Section -->
+        <div id='dateSection' class='block paddingZero center'>
+          <h2 class='block center paddingZero'>Date Filter</h2>
+          <div id='beginDate' class="dateSelect">
+            <label for="beginDate">Begin Date: &nbsp;&nbsp;</label>
+            <input type="date" name='begindate'>
+          </div>
+          <div id='endDate' class="dateSelect">
+            <label for="endDate">End Date: &nbsp;&nbsp;</label>
+            <input type="date" name='enddate'>
+          </div>
+          <button class='resetBTN'>Reset Date</button>
+        </div>
+
+        <!-- Rating -->
+        <div id='medReportRating' class='block paddingZero center'>
+          <h2 class='block center paddingZero'>Rating Filter (stars)</h2>
+          <div class="flexWrapper">
+            <label for='beginRating'>From: </label>
+            <input name='beginRating' type='number' min='0' max='5' step='0.5' placeholder='0.0'>
+          </div>
+          
+          <div class="flexWrapper">
+            <label for='endRating'>To: </label>
+            <input name='endRating' type='number' min='0' max='5' step='0.5' placeholder='0.0'>
+          </div>
+
+          <button class='resetBTN'>Reset Rating</button>
+        </div>
+
+        <!-- Duration -->
+        <div id='medReportDuration' class='block paddingZero center'>
+            <h2 class='block center paddingZero'>Duration Filter (minutes)</h2>
+            <div class="flexWrapper">
+              <label for='beginDuration'>From: </label>
+              <input name='beginDuration' type='number' min='0' max='1440' step='1' placeholder='0'>
+            </div>
+            
+            <div class="flexWrapper">
+              <label for='endDuration'>To: </label>
+              <input name='endDuration' type='number' min='0' max='1440' step='1' placeholder='0'>
+            </div>
+  
+            <button class='resetBTN'>Reset Duration</button>
+          </div>
+
+        <!-- Notes -->
+        <div id='medReportNotes' class='block paddingZero center'>
+            <h2 class='block center paddingZero'>Keyword Filter</h2>
+            <div class="flexWrapper">
+              <label for='notesSearch'>Keyword Search: </label>
+              <input name='notesSearch' type='text' placeholder='Example: meditate, sunflowers, relaxing'>
+            </div>
+  
+            <button class='resetBTN'>Reset Notes Search</button>
+          </div>
+
+        <!-- Sort By -->
+        <div id='medReportSort' class='block paddingZero center'>
+          <h2 class='block center paddingZero'>Sort Filter</h2>
+          <div class="flexWrapper">
+            <label for='sortby'>Sort By: </label>
+            <select name='sortby'>
+              <option>None</option>
+              <option>Name</option>
+              <option>Date</option>
+              <option>Duration</option>
+              <option>Rating</option>
+              <option>Keyword</otion>
+            </select>
+          </div>
+        </div>
+
+          <!-- Order By -->
+        <div id='medReportOrder' class='block paddingZero center'>
+            <h2 class='block center paddingZero'>Order Filter</h2>
+            <div class="flexWrapper hidden">
+              <label for='orderby'>Order By: </label>
+              <select name='orderby'>
+                <option>None</option>
+                <option>Name</option>
+                <option>Date</option>
+                <option>Duration</option>
+                <option>Rating</option>
+                <option>Keyword</otion>
+              </select>
+            </div>
+
+          <div class="flexWrapper">
+              <label for='ascdesc'>Order By: </label>
+              <select name='ascdesc'>
+                <option>Ascending</option>
+                <option>Descending</option>
+              </select>
+            </div>
+
+          <button class='resetBTN'>Reset Notes Search</button>
+        </div>
+
+        <button id='submitReportGen' class='block center paddingZero marginZero'>Generate Report</button>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+<section id='medQuickViewMain' class='center block marginZero paddingZero'>
+  <div class='center block marginZero'>
+    <h2>Latest Meditations (10)</h2>
+    <ul>
+      for(let x = 0; x < quickResults.length; x++) {
+        <li class='medQuickViewItem'>quickResults[x].meditationName</li>
+        <li class='medQuickViewItem'>
+          <span>Type: </span>
+          <span>quickResults[x].meditationType</span></li>
+        <li class='medQuickViewItem'>
+          <span>Duration: </span>
+          <span>quickResults[x].meditationDuration</span></li>
+        <li class='medQuickViewItem'>
+          <span>Rating: </span>
+          <span>quickResults[x].meditationRating</span></li>
+        <li class='medQuickViewItem'>
+          <span class='medQuickNotesLabel'>Notes</span>
+          <span class='medQuickNotesInfo'>quickResults[x].meditationNotes</span></li>
+      }
+    </ul>
+  </div>
+</section>

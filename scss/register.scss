@@ -1,0 +1,161 @@
+@import 'style';
+/* Register Styling */
+body {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+#registerForm {
+  background-color: $light;
+  border-radius: 0.2rem;
+  box-shadow: 5px 5px 10px #444;
+  padding: 2rem;
+  border: 2px solid $dark;
+  font-family: 'Baloo-Regular', sans-serif;
+  color: $dark;
+
+  h1, h2 {
+    text-align: center;
+  }
+
+  div {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+
+    label, input {
+      display: inline-block;
+      border-radius: 0.2rem;
+      text-align: center;
+      padding: 0.2rem;
+      font-size: 1.2rem;
+    }
+    label {
+      width: 30%;
+      text-align: right;
+    }
+    input {
+      width: 60%;
+      text-align: left;
+      border-bottom: 1px solid $dark;
+      border-top: 1px solid transparent;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+      background-color: transparent;
+      color: $medium;
+    }
+  }
+  button,
+  a {
+    text-align: center;
+    padding: 0.5rem 0;
+    background-color: #f1f1f1;
+    color: #333;
+    width: 90%;
+    left: 5%;
+    position: relative;
+    border-radius: 0.2rem;
+    box-shadow: 3px 3px 5px #444;
+    border: 1px solid $dark;
+    display: block;
+    margin-top: 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+  }
+  button:hover,
+  a:hover {
+    background-color: $dark;
+    color: #f1f1f1;
+    transition-duration: 0.2s;
+    width: 100%;
+    left: 0;
+    cursor: pointer;
+  }
+  #loginBTN {
+    margin-top: -35px;
+  }
+}
+
+.errListContainer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li:nth-of-type(1) {
+  margin-top: 1rem;
+  }
+
+  li {
+  text-align: center;
+  background-color: $warning;
+  font-size: bold;
+  text-decoration: none;
+  list-style: none;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem
+  }
+}
+
+/* Bootstrap sizing media queries */
+@media only screen and (min-width: 1px) and (max-width: 575px) {
+  #registerForm {
+    width: 80%;
+
+  label,
+  input {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    }
+  }
+  label {
+    background-color: $lightdark;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  #registerForm  {
+    width: 70%;
+  }
+  .errListContainer {
+    width: 70%;
+    left: 15%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #registerForm {
+    width: 60%;
+  }
+  .errListContainer {
+    width: 60%;
+    left: 20%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #registerForm {
+    width: 50%;
+  }
+  .errListContainer {
+    width: 50%;
+    left: 25%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #registerForm,
+  .errListContainer   {
+    width: 40%;
+  }
+}

@@ -1,0 +1,1583 @@
+@import 'style';
+/********** GLOSSARY 
+
+1: GENERAL
+2: FONTS
+3: BODY
+4: CONTENT
+5: MEDIA QUERIES
+*/
+
+/********** 1: GENERAL */
+/********** 2: FONTS */
+/********** 3: BODY */
+body {
+  background-image: none;
+}
+#navigationTop {
+  display: none;
+}
+/********** 4: CONTENT */
+#dashboardWrapper,
+#meditationPage {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+#dashboardWrapper {
+  margin: 0 0 -50px 0;
+  padding: 0;
+}
+#dashboard {
+  position: relative;
+}
+#navigation,
+#dashboard {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: 1rem;
+  color: $medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100%;
+}
+#navigation {
+  background-color: $bright;
+  text-align: center;
+  font-size: 1.2rem;
+  height: 100%;
+  position: fixed;
+
+  h2 {
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding:  10px 0;
+    border-bottom: 2px solid $dark;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    text-decoration: none;
+    list-style-type: none;
+    background-color: $bright;
+    border-top: 1px solid transparent;
+    border-bottom: 2px solid transparent;
+  }
+
+  li:hover {
+    border-top: 1px solid $medium;
+    border-bottom: 2px solid $dark;
+    transition-duration: 0.2s;
+    cursor: pointer;
+  }
+}
+
+#navigationTop {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 60px;
+  background-color: $dark;
+  display: none;
+
+  ul {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0px;
+    text-align: center;
+    width: 60%;
+
+    li {
+      color: $light;
+      height: 56px;
+      display: inline-block;
+      font-size: 18px;
+      line-height: 60px;
+      padding: 0 1%;
+      border-bottom: 1px solid transparent;
+      
+
+      span {
+        display: inline-block;
+        text-align: center;
+        list-style-type: none;
+        text-decoration: none;
+      }
+    }
+    li:hover {
+      cursor: pointer;
+      background-color: #0c3558;
+      border-bottom: 1px solid $bright;
+      transition-duration: 0.2s;
+    }
+  }
+  
+}
+
+#meditationPage {
+  .chart,
+  .dashboardForm,
+  .notes,
+  .rating {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .chart {
+    background-color: $bright;
+    height: 300px;
+  }
+  .dashboardForm,
+  .notes {
+    background-color: $bright;
+    height: auto;
+  }
+  .rating {
+    background-color: $medium;
+    height: 100px;
+  }
+
+    .dashboardForm {
+      padding: 0;
+      margin: 0;
+
+      #addEditDelete {
+        padding: 0;
+        margin: 0;
+        width: 60%;
+        margin: auto auto;
+        text-align: center;
+        
+        span {
+          display: inline-block;
+          width: 32%;
+          border-radius: 0.3rem;
+          padding: 0.5rem 0;
+          margin-top: 0.3rem;
+          text-align: center;
+          box-sizing: border-box;
+        }
+
+        .meditationAdd {
+          background-color: $success;
+          color: #005500;
+          border: 1px solid #005500;
+        }
+        .meditationAdd:hover {
+          background-color: #005500;
+          color: $success;
+          transition-duration: 0.2s;
+          cursor: pointer;
+        }
+        .meditationEdit {
+          background-color: $light;
+          color: $dark;
+          border: 1px solid $dark;
+        }
+        .meditationEdit:hover {
+          background-color: $dark;
+          color: $light;
+          transition-duration: 0.2s;
+          cursor: pointer;
+        }
+        .meditationDelete {
+          background-color: $warning;
+          color: #550000;
+          border: 1px solid #550000;
+        }
+        .meditationDelete:hover {
+          background-color: #550000;
+          color: $warning;
+          transition-duration: 0.2s;
+          cursor: pointer;
+        }
+      }
+
+      form {
+      width: 70%;
+
+        h3 {
+          width: 90%;
+          text-align: center;
+          padding: 0.5rem 0;
+          border-bottom: 1px solid $medium;
+          background-color: $offBlack;
+          color: $bright;
+          border-radius: 0.2rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .type,
+        .duration,
+        .rating,
+        .name,
+        .date {
+          width: 90%;
+          position: relative;
+          left: 5%;
+          font-size: 0;
+          padding: 0.5rem 0;
+        }
+
+        .type label,
+        .duration label,
+        .name label,
+        .date label {
+          width: 30%;
+          text-align: center;
+          height: 50px;
+          line-height: 50px;
+          font-weight: bold;
+          font-size: 20px;
+          display: inline-block !important;
+        }
+
+        .type select,
+        .duration input,
+        .name input,
+        .date input {
+          width: 69%;
+          text-align: left;
+          height: 50px;
+          line-height: 50px;
+          border-radius: 0.5rem;
+          border: 1px solid $medium;
+          color: $dark;
+          font-size: 1.2rem;
+          text-align: center;
+          padding: 0;
+        }
+        #time {
+          margin-top: 0.5rem;
+        }
+        
+
+        .duration span {
+          text-align: center;
+          color: $dark;
+          display: block;
+          width: 100%;
+          font-size: 16px;
+          font-style: italic;
+          padding: 0.5rem 0;
+          margin: 0.5rem 0;
+          border-radius: 0.3rem;
+          background-color: $light;
+        }
+
+        .type select:focus {
+          box-shadow: 0px 0px 5px $light;
+          border-radius: 0.5rem;
+        }
+      }
+  }
+
+  #meditationErrors span,
+  #meditationWarnings span,
+  #meditationInfo span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 2px auto;
+    padding: 0.5rem;
+    color: $bright;
+  }
+  
+  #meditationErrors span {
+    background-color: rgba(220, 20, 0, 0.8);
+  }
+  #meditationWarnings span {
+    background-color: rgba(211, 150, 58, 0.8);
+  }
+  #meditationInfo span {
+    background-color: rgba(50, 130, 200, 0.8);
+  }
+
+  #meditationRatingWrapper {
+      margin: auto auto;
+      padding: 0;
+      width: 90%;
+      font-size: 0;
+
+    #meditationLabelRating {
+      display: inline-block;
+      text-align: right;
+      height: 20px;
+    }
+    label {
+      width: 30%;
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      font-weight: bold;
+      font-size: 20px;
+      display: inline-block !important;
+      position: relative;
+      top: -15px;
+    }
+    #meditationRating {
+      padding: 0;
+      margin: 0;
+      text-align: center !important;
+      display: inline-block;
+      width: 69%;
+
+      img {
+        height: 50px;
+        width: 25px;
+      }
+
+      img:hover {
+        cursor: pointer;
+      }
+    }
+
+    #resetStars {
+      width: 69%;
+      padding: 0.5rem 0;
+      border-radius: 0.2rem;
+      border: 1px solid $dark;
+      text-align: center;
+      margin: 0 1% 0 auto;
+      font-size: 1.2rem;
+      background-color: beige;
+    }
+    #resetStars:hover {
+      cursor: pointer !important;
+      transition-duration: 0.2s;
+    }
+  }
+
+  #ratingWrapper {
+    display: none !important;
+  }
+
+  .notes {
+    padding: 0;
+    width: 90%;
+    position: relative;
+    left: 5%;
+    font-size: 0;
+
+    label {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: $dark;
+      color: $bright;
+      border-radius: 0.3rem;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem 0;
+      width: 100%;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    textarea {
+      display: block;
+      width: 98%;
+      height: 250px;
+      margin: auto auto;
+      border-radius: 0.3rem;
+      border: none;
+      font-size: 16px;
+      color: $medium;
+      border: 1px solid $medium;
+      padding: 0.5rem;
+    }
+  }
+
+  .blueBTN {
+    text-align: center;
+    padding: 0.7rem 0;
+    background-color: $success;
+    color: #333;
+    width: 90%;
+    left: 5%;
+    position: relative;
+    border-radius: 0.2rem;
+    box-shadow: 3px 3px 5px offBlack;
+    border: 1px solid $dark;
+    display: block;
+    margin: 15px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+  } 
+  .blueBTN:hover {
+    color: #222;
+    background-color: $successHover;
+    transition-duration: 0.2s;
+    width: 100%;
+    left: 0;
+    cursor: pointer;
+  }
+}
+
+
+.meditationEntryWrapper,
+.meditationEntryWrapperDel {
+  width: 58%;
+  position: relative;
+  left: 21%;
+  margin: auto auto;
+  display: block;
+  padding: 0;
+  font-size: 0;
+  border: 2px solid $light;
+  border-radius: 0.2rem;
+  margin: 0.2rem 0;
+
+  .meditationEntry {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    background-color: transparent;
+
+    .meditationSpan,
+    .meditationSpanDel {
+      display: inline-block;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      width: 33.3%;
+      font-size: 18px;
+      background-color: transparent;
+      line-height: 50px;
+    }
+    .meditationSpan {
+      color: $dark;
+    }
+    .meditationSpanDel {
+      color: #550000;
+    }
+
+    .meditationSpan .editMeditation,
+    .meditationSpanDel .deleteMeditation {
+      background-color: $dark;
+      color: $bright;
+      width: 80%;
+      display: block;
+      margin: auto auto;
+      text-align: center;
+      border-radius: 0.3rem;
+      box-shadow: 0px 0px 5px #333;
+      padding: 0;
+      height: 35px;
+      line-height: 35px;
+      padding: 2.5px 0;
+      
+    }
+    .meditationSpan .editMeditation:hover {
+      background-color: $darkHover;
+    }
+
+    .meditationSpan .editMeditation {
+      background-color: $dark;
+    }
+    .meditationSpanDel .deleteMeditation {
+      background-color: #800;
+    }
+    .meditationSpanDel .deleteMeditation:hover {
+      background-color: #550000;
+    }
+  }
+}
+.meditationEntryWrapper:nth-of-type(1),
+.meditationEntryWrapperDel:nth-of-type(1) {
+  margin-top: 1rem;
+}
+.meditationEntryWrapper:hover,
+.meditationEntryWrapperDel:hover {
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+.meditationEntryWrapper:hover {
+  background-color: $light !important;
+}
+.meditationEntryWrapperDel:hover {
+  background-color: $warning !important;
+}
+.meditationEntryWrapper:nth-of-type(even),
+.meditationEntryWrapperDel:nth-of-type(even) {
+  background-color: $offWhite;
+}
+
+#noMeditationsFound {
+  width: 60%;
+  margin: 1rem auto;
+  padding: 0;
+  border: 1px solid $warning;
+  box-shadow: 0px 0px 5px $offBlack;
+  min-height: 300px;
+
+  h1 {
+    text-align: center;
+    color: #800;
+    margin: 2rem auto;
+    padding: 0.5rem;
+    font-size: 22px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 16px;
+    padding: 1rem;
+    border: 1px solid $warning;
+    border-radius: 0.3rem;
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+.infobar {
+  height: 70px;
+  line-height: 0;
+  
+  ul {
+    font-size: 0;
+    padding: 0;
+    height: inherit;
+
+    li {
+      font-size: 18px;
+      color: $bright;
+      background-color: $dark;
+      text-align: center;
+      display: inline-block;
+      width: 16.5%;
+      line-height: 50px;
+    }
+    li:nth-of-type(7) {
+      height: 20px;
+      width: 100%;
+      background-color: $bright;
+    }
+    li:hover {
+      background-color: $darkHover;
+      transition-duration: 0.2s;
+      cursor: pointer;
+    }
+    li:nth-of-type(7):hover {
+      background-color: $bright;
+      cursor: default;
+    }
+  }
+}
+
+#datetimeinfo {
+  font-size: 16px;
+  padding: 0.3rem 0;
+  margin: 0.5rem 0 0.2rem 0;
+  text-align: center;
+  background-color: $light;
+  color: $dark;
+  font-style: italic;
+  border-radius: 0.2rem;
+}
+.meditationSuccessAdd {
+  padding: 1rem 0;
+  margin: 0 auto 1rem auto;
+  width: 90%;
+  border-radius: 0.2rem;
+  background-color: beige;
+  font-weight: bold;
+  text-align: center;
+  display:block;
+  color: #050;
+  border: 1px solid #050;
+}
+.meditationSuccessAdd:hover {
+  cursor: pointer;
+}
+/********** MEDITATION QUICK VIEW PAGE STYLING */
+#medQuickViewMain {
+  line-height: 0;
+  font-size: 0;
+  position: relative;
+
+  h2 {
+    text-align: center;
+    color: $dark;
+    font-size: 22px;
+    padding: 25px;
+    background-color: transparent;;
+    width: 97%;
+  }
+  ul {
+    background-color: $bright;
+    border-radius: 0.3rem;
+    box-shadow: 5px 5px 10px $offBlack;
+    border: 1px solid $dark;
+    padding: 0.5rem;
+    width: 45%;
+    display: inline-block;
+    margin: 0 1.25% 2% 1.25%;
+    
+    li {
+      font-size: 18px;
+      list-style: none;
+      line-height: 30px;
+    }
+    li:nth-of-type(1) {
+      background-color: $dark;
+      color: $bright;
+      text-align: center;
+      padding: 10px 0;
+      border-radius: 0.3rem;
+    }
+    span {
+      display: inline-block;
+    }
+    span:nth-of-type(even) {
+      width: 68%;
+    }
+    span:nth-of-type(odd) {
+      width: 30%;
+      text-align: right;
+      font-weight: bold;
+    }
+    .medQuickNotesLabel {
+      border-top-right-radius: 0.3rem;
+      border-top-left-radius: 0.3rem;
+      width: 30%;
+      display: block;
+      color: $medium;
+      text-align: right;
+    }
+    .medQuickNotesInfo {
+      border: 1px solid $medium;
+      border-bottom-right-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem;
+      width: 99.7% !important;
+      height: 200px;
+      display: block;
+      overflow-y: scroll;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  .medQuickViewItem:nth-of-type(1) {
+    text-align: center;
+  }
+}
+/********* MEDITATION REPORTS PAGE STYLING */
+#medReportSection {
+  #medReportMainH {
+    text-align: center;
+    color: $dark;
+    font-size: 22px;
+    background-color: transparent;
+    width: 70%;
+  }
+
+  h3 {
+    font-size: 18px;
+    color: $medium;
+    text-align: center;
+    width: 70%;
+    font-weight: normal;
+    font-style: italic;
+
+    em {
+      font-weight: bold;
+    }
+  }
+
+  form {
+    border: 1px solid $medium;
+    border-radius: 0.5rem;
+    width: 60%;
+    margin-top: 1%;
+    font-size: 0;
+    margin: 1% auto;
+
+    label {
+      padding: 0.5rem 0;
+
+      span {
+        color: $medium;
+        display: inline-block;
+        position: relative;
+        font-size: 20px;
+      }
+    }
+    
+    .multiselect {
+      width: 100%
+    }
+
+    .selectBox {
+      position: relative;
+      margin: 1% auto;
+      width: 92%;
+    }
+    
+    .selectBox select {
+      width: 100%;
+      font-weight: bold;
+      font-size: 22px;
+      text-align: center;
+      background-color: $medium;
+      color: $bright;
+      padding: 0.3rem 0;
+    }
+
+    .overSelect {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    #checkboxes {
+      display: none;
+      border: 1px #dadada solid;
+      width: 92%;
+      margin: -15px auto 0 auto;
+    }
+    
+    #checkboxes label {
+      display: block;
+    }
+    
+    #checkboxes label:hover {
+      background-color: $light;
+    }
+    
+    #checkboxes button {
+      background-color: $medium;
+      color: $bright;
+      width: 100%;
+      display: block;
+      font-size: 20px;
+      padding: 1% 0;
+    }
+
+    #dateSection {
+      width: 90%;
+      margin: 1% auto;
+      padding: 1%;
+      border: 1px solid $dark;
+      border-radius: 0.2rem;
+      background-color: rgba(135, 192, 205, 0.5);
+
+      h2 {
+        font-size: 22px;
+        color: $dark;
+        text-align: center;
+        margin-bottom: 1%;
+      }
+      #beginDate label,
+      #endDate label,
+      #beginDate input,
+      #endDate input  {
+        width: 30%;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        height: 50px;
+      }
+      #beginDate label,
+      #endDate label {
+        font-size: 22px;
+        text-align: right;
+        color: $medium;
+        line-height: 50px;
+      }
+      #beginDate input,
+      #endDate input {
+        width: 69.7%;
+        font-size: 22px;
+        color: $medium;
+        font-weight: bold;
+      }
+      #beginDate,
+      #endDate {
+        width: 100%;
+        display: flex;
+      }
+      .resetBTN {
+        width: 100%;
+        padding: 0.5rem 0;
+        border-radius: 0.2rem;
+        border: 1px solid $dark;
+        text-align: center;
+        margin: 1% auto;
+        font-size: 1.2rem;
+        background-color: beige;
+      }
+      .resetBTN:hover {
+        cursor: pointer !important;
+      }
+    }
+
+    #medReportRating,
+    #medReportDuration,
+    #medReportNotes,
+    #medReportSort,
+    #medReportOrder {
+      width: 90%;
+      margin: 1% auto;
+      padding: 1%;
+      border: 1px solid $dark;
+      border-radius: 0.2rem;
+      background-color: rgba(135, 192, 205, 0.5);
+
+      h2 {
+        font-size: 20px;
+        color: $dark;
+        text-align: center;
+        margin-bottom: 1%;
+        font-weight: normal;
+      }
+
+      .flexWrapper {
+        display: flex;
+      }
+
+      label {
+        font-size: 18px;
+        text-align: right;
+        color: $medium;
+        line-height: 40px;
+        display: inline-block;
+        width: 30%;
+      }
+
+      input {
+        width: 69.7%;
+        font-size: 18px;
+        color: $medium;
+        display: inline-block;
+        line-height: 40px;
+        text-align: center;
+      }
+      .resetBTN,
+      select {
+        width: 100%;
+        padding: 0.5rem 0;
+        border-radius: 0.2rem;
+        border: 1px solid $dark;
+        text-align: center;
+        margin: 1% auto;
+        font-size: 1.2rem;
+      }
+      .resetBTN {
+        background-color: beige;
+      }
+      .resetBTN:hover {
+        cursor: pointer !important;
+      }
+      .errMSG {
+        width: 99.5%;
+        padding: 0.4rem 0;
+        border-radius: 0.2rem;
+        border: 1px solid $dark;
+        text-align: center;
+        margin: 1% auto 0.5% auto;
+        font-size: 1rem;
+        background-color: $warning;
+        position: relative;
+        top: 5px;
+        color: #500;
+      }
+    }
+    #submitReportGen {
+      width: 93%;
+      padding: 0.8rem 0;
+      border-radius: 0.2rem;
+      border: 1px solid $dark;
+      text-align: center;
+      margin: 1% auto;
+      font-size: 1.2rem;
+      background-color: #444;
+      color: $bright;
+    }
+    #submitReportGen:hover {
+      background-color: #333;
+      cursor: pointer;
+    }
+    .errMSG {
+      width: 93%;
+      padding: 0.6rem 0;
+      border-radius: 0.2rem;
+      border: 1px solid $dark;
+      text-align: center;
+      margin: 1% auto 0.5% auto;
+      font-size: 1rem;
+      background-color: $warning;
+      position: relative;
+      top: 5px;
+      color: #500;
+    }
+  }
+}
+#medReportListing {
+  font-size: 0;
+  width: 99.5%;
+  height: auto;
+
+  h2 {
+    text-align: center;
+    font-size: 22px;
+    color: $medium;
+  }
+
+  .medReportListRow {
+    width: 70%;
+    border: 1px solid $medium;
+    border-radius: 0.3rem;
+    box-shadow: 5px 5px 5px #666;
+    margin: 1% auto;
+    min-height: 150px;
+    height: auto;
+    display: flex;
+
+    .medReportListItem {
+      width: 24%;
+      height: auto;
+      display: inline-block;
+      margin: 0.5%;
+
+      img {
+        height: 145px;
+        width: 145px;
+        margin: auto;
+        display: block;
+      }
+      img:hover {
+        transform: translateY(-7px);
+        transition-duration: 0.3s;
+        cursor: pointer;
+      }
+
+      span {
+        font-size: 16px;
+        text-align: center;
+        color: $medium;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+
+#medReportGenerated {
+  #medReportHeader {
+    border: 1px solid $dark;
+    border-radius: 0.3rem;
+    width: 95%;
+    margin: 0 auto;
+
+    div {
+      display: flex;
+      width: 70%;
+      margin: 0 auto;
+    }
+    span:nth-of-type(odd) {
+      text-align: right;
+      padding: 0.5rem;
+      flex: 1;
+    }
+    span:nth-of-type(even) {
+      flex: 1;
+      padding: 0.5rem;
+      text-align: left;
+    }
+  }
+  #reportBody {
+    margin: 0 auto;
+    width: 95%;
+    border: 1px solid $dark;
+
+    .bodyItemWrapper {
+      width: 80%;
+      margin: 0.2% auto;
+      border: 2px solid $medium;
+      overflow: hidden;
+      padding: 0.5% 0;
+
+      h2 {
+        font-weight: bold;
+        padding: 0 2%;
+        font-size: 18px;
+      }
+      span {
+        display: none;
+        padding: 0.3%;
+        width: 95%;
+        margin: 0 auto;
+        display: none;
+      }
+      span:nth-of-type(odd) {
+        background-color: #ddd;
+      }
+    }
+    .bodyItemWrapper:hover {
+      transition-duration: 0.2s;
+      cursor: pointer;
+      box-shadow: 0px 0px 5px $light;
+    }
+  }
+  #reportGenBTNs {
+    display: flex;
+    width: 95%;
+    margin: 0.2% auto;
+
+    .reportGenBTN,
+    .reportGenBTN2 {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      border-radius: 0.3rem;
+      font-weight: bold;
+      margin: 0 0.2%;
+      color: $bright;
+      border: 1px solid $dark;
+    }
+    .reportGenBTN {
+      background-color: $medium;
+    }
+    .reportGenBTN2 {
+      background-color: beige;
+      color: $medium;
+    }
+    .reportGenBTN:hover {
+      background-color: $dark;
+      transition-duration: 0.2s;
+      cursor: pointer;
+    }
+    .reportGenBTN2:hover {
+      background-color: #c3c3ba;
+      cursor: pointer;
+    }
+  }
+}
+
+#friendsPage {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+
+  #friendsNav {
+    width: 70%;
+    padding: 0;
+    margin: 1% auto;
+    display: flex;
+
+    .friendsBTN1,
+    .friendsBTN2 {
+      display: flex;
+      width: 50%;
+      margin: 0 0.5%;
+      height: 40px;
+      line-height: 40px;
+      background-color: $bright;
+      border: 2px solid $dark;
+      box-shadow: 3px 3px 10px #666;
+      text-align: center;
+      color: $dark;
+      border-radius: 0.3rem;
+    }
+
+    span {
+      width: 100%;
+      display: block;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      height: 40px;
+    }
+    span:hover {
+      cursor: pointer;
+    }
+    .frSelected {
+      background-color: $medium;
+      color: $bright;
+    }
+    .frSelected:hover {
+      background-color: $dark;
+      color: $bright;
+      cursor: pointer;
+    }
+  }
+  #friendsResults {
+    width: 70%;
+    margin: 0.5% auto;
+    border: 1px solid $medium;
+    box-shadow: 5px 5px 10px #666;
+
+    div {
+      width: 100%;
+      padding: 0;
+      height: auto;
+      background-color: $offWhite;
+      display: block;
+      text-align: center;
+      border-bottom: 1px solid $light;
+
+      span {
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+        padding: 0;
+      }
+      span:nth-of-type(1) {
+        width: 20%;
+      }
+      span:nth-of-type(2),
+      span:nth-of-type(3) {
+        width: 39%;
+      }
+      .userSearchItem {
+        position: relative;
+      }
+      .userSearchItem:nth-of-type(2) {
+        left: 5%;
+        text-align: left;
+        width: 55%;
+      }
+      .userSearchItem:nth-of-type(3) {
+        border: 1px solid $dark;
+        border-radius: 0.2rem;
+        height: 40px;
+        width: 10%;
+        background-color: $offWhite;
+        font-weight: bold;
+        top: 5px;
+      }
+      .userSearchItem:nth-of-type(3):hover {
+        background-color: $dark;
+        color: $bright;
+        cursor: pointer;
+      }
+    }
+    div:nth-of-type(odd) {
+      background-color: $bright;
+    }
+    img {
+      height: 45px;
+      width: 45px;
+      border-radius: 100%;
+      border: 1px solid $offBlack;
+      position: relative;
+      top: 2px;
+      margin: 0 0 0 80%;
+    }
+    .frErrMSG,
+    .frSucMSG {
+      display: block;
+      width: 100%;
+      height: 25px;
+      line-height: 20px;
+      font-size: 18px;
+    }
+    .frErrMSG {
+      background-color: $warning;
+      color: #500;
+    }
+    .frSucMSG {
+      background-color: $success;
+      color: #050;
+    }
+  }
+  #searchControls {
+    width: 70%;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0;
+
+    input {
+      display: inline-block;
+      height: 50px;
+      width: 70%;
+      margin: 0;
+      padding: 0;
+      border-top-left-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem;
+      border: 1px solid $medium;
+      font-size: 22px;
+      color: $medium;
+      text-align: center;
+    }
+
+    span {
+      display: inline-block;
+      height: 50px;
+      width: 29%;
+      background-color: $medium;
+      color: $bright;
+      margin: 0;
+      padding: 0;
+      border-top-right-radius: 0.3rem;
+      border-bottom-right-radius: 0.3rem;
+      border: 1px solid $medium;
+      font-size: 22px;
+      line-height: 50px;
+      text-align: center;
+    }
+    span:hover {
+      background-color: $dark;
+      cursor: pointer;
+      transition-duration: 0.2s;
+    }
+  }
+}
+/********** EXTERNAL PAGE STYLING */
+#accountPage {
+  display: none;
+}
+/********** 5: MEDIA QUERIES */
+/* Bootstrap sizing media queries */
+@media only screen and (min-width: 1px) and (max-width: 575px) {
+  #navigation {
+    width: 0%;
+    display: none;
+  }
+  #navigationTop {
+    display: block;
+  }
+  #dashboard {
+    width: 100%;
+    left: 0%;
+  }
+  #meditationPage {
+    .dashboardForm {
+      #addEditDelete {
+        padding: 0;
+        margin: 0;
+        width: 95%;
+        margin: auto auto;
+        text-align: center;
+      }
+    }
+  }
+  #navigationTop {
+    ul {
+      width: 95%;
+    }
+  }
+  #noMeditationsFound,
+  #meditationPage .dashboardForm form {
+    width: 95%;
+  }
+  label {
+    background-color: transparent;
+  }
+  .meditationEntryWrapper,
+  .meditationEntryWrapperDel {
+    width: 98%;
+    left: 1%;
+  }
+  .meditationEntryWrapper {
+    .meditationEntry {
+      .meditationEntry {
+        span {
+          width: 48%;
+          white-space: nowrap;
+        }
+        span:nth-of-type(2) {
+          display: none;
+        }
+      }
+    }
+  }
+  #meditationPage .chart {
+    height: 200px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  #navigation {
+    width: 0%;
+    display: none;
+  }
+  #navigationTop {
+    display: block;
+  }
+  #dashboard {
+    width: 100%;
+    left: 0%;
+  }
+  #meditationPage {
+    .dashboardForm {
+      #addEditDelete {
+        padding: 0;
+        margin: 0;
+        width: 90%;
+        margin: auto auto;
+        text-align: center;
+      }
+    }
+  }
+  #navigationTop {
+    ul {
+      width: 90%;
+    }
+  }
+  #noMeditationsFound,
+  #meditationPage .dashboardForm form {
+    width: 90%;
+  }
+  .meditationEntryWrapper,
+  .meditationEntryWrapperDel {
+    width: 88%;
+    left: 6%;
+  }
+  .meditationEntryWrapper {
+    .meditationEntry {
+      .meditationEntry {
+        span {
+          width: 48%;
+          white-space: nowrap;
+        }
+        span:nth-of-type(2) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #navigation {
+    width: 15%;
+  }
+  #dashboard {
+    width: 85%;
+    left: 15%;
+  }
+  #meditationPage {
+    .dashboardForm {
+      #addEditDelete {
+        padding: 0;
+        margin: 0;
+        width: 80%;
+        margin: auto auto;
+        text-align: center;
+      }
+    }
+  }
+  #navigationTop {
+    ul {
+      width: 80%;
+    }
+  }
+  #noMeditationsFound,
+  #meditationPage .dashboardForm form {
+    width: 80%;
+  }
+  .meditationEntryWrapper,
+  .meditationEntryWrapperDel {
+    width: 78%;
+    left: 11%;
+  }
+  .meditationEntryWrapper {
+    .meditationEntry {
+      .meditationEntry {
+        span {
+          width: 48%;
+          white-space: nowrap;
+        }
+        span:nth-of-type(2) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #navigation {
+    width: 15%;
+  }
+  #dashboard {
+    width: 85%;
+    left: 15%;
+  }
+  #meditationPage {
+    .dashboardForm {
+      #addEditDelete {
+        padding: 0;
+        margin: 0;
+        width: 70%;
+        margin: auto auto;
+        text-align: center;
+      }
+    }
+  }
+  #navigationTop {
+    ul {
+      width: 70%;
+    }
+  }
+  #noMeditationsFound,
+  #meditationPage .dashboardForm form {
+    width: 70%;
+  }
+  .meditationEntryWrapper,
+  .meditationEntryWrapperDel {
+    width: 68%;
+    left: 16%;
+  }
+  
+}
+@media only screen and (min-width: 1200px) {
+  #navigation {
+    width: 10%;
+  }
+  #dashboard {
+    width: 90%;
+    left: 10%;
+  }
+}
+
+
+@media only screen and (min-height: 1px) and (max-height: 650px) {
+  #navigation {
+    display: none;
+  }
+  #navigationTop {
+    display: block;
+  }
+}
+@media only screen and (min-height: 651px) and (max-height: 800px) {
+  #navigation {
+    span {
+      width: 60px;
+      height: 45px;
+      background-image: url('https://www.intuitionlog.com/img/spritesSM.png');
+      background-repeat: no-repeat;
+    }
+
+    .meditation span {
+      background: url('https://www.intuitionlog.com/img/spritesSM.png') -0 -180px;
+    }
+    .readings span {
+      background: url('https://www.intuitionlog.com/img/spritesSM.png') -0 -90px;
+    }
+    .circles span {
+      background: url('https://www.intuitionlog.com/img/spritesSM.png') -0 -45px;
+    }
+    .notes span {
+      background: url('https://www.intuitionlog.com/img/spritesSM.png') -0 -225px;
+    }
+    .settings span {
+      background: url('https://www.intuitionlog.com/img/spritesSM.png') -0 -270px;
+    }
+    .account span {
+      background: url('https://www.intuitionlog.com/img/spritesSM.png') -0 -0;
+    }
+    .logout span {
+      background: url('https://www.intuitionlog.com/img/spritesSM.png') -0 -135px;
+    }
+
+    .meditation,
+    .readings,
+    .circles,
+    .notes,
+    .settings,
+    .account,
+    .logout {
+      padding: 3% 0;
+    }
+  }
+  #dashboard {
+    width: 100%;
+    left: 0;
+  }
+}
+@media only screen and (min-height: 801px) and (max-height: 1199px) {
+  #navigation {
+    span {
+      width: 80px;
+      height: 60px;
+      background-image: url('https://www.intuitionlog.com/img/spritesMD.png');
+      background-repeat: no-repeat;
+    }
+
+    .meditation span {
+      background: url('https://www.intuitionlog.com/img/spritesMD.png') 0 -240px;
+    }
+    .readings span {
+      background: url('https://www.intuitionlog.com/img/spritesMD.png') -0 -120px;
+    }
+    .circles span {
+      background: url('https://www.intuitionlog.com/img/spritesMD.png') -0 -60px;
+    }
+    .notes span {
+      background: url('https://www.intuitionlog.com/img/spritesMD.png') -0 -300px;
+    }
+    .settings span {
+      background: url('https://www.intuitionlog.com/img/spritesMD.png') -0 -360px;
+    }
+    .account span {
+      background: url('https://www.intuitionlog.com/img/spritesMD.png') -0 -0;
+    }
+    .logout span {
+      background: url('https://www.intuitionlog.com/img/spritesMD.png') -0 -180px;
+    }
+
+    .meditation,
+    .readings,
+    .circles,
+    .notes,
+    .settings,
+    .account,
+    .logout {
+      padding: 4% 0;
+    }
+  }
+}
+@media only screen and (min-height: 1200px){
+  #navigation {
+    span {
+      width: 90px;
+      height: 75px;
+      background-image: url('https://www.intuitionlog.com/img/spritesLG.png');
+      background-repeat: no-repeat;
+    }
+
+    .meditation span {
+      background: url('https://www.intuitionlog.com/img/spritesLG.png') -0 -300px;
+    }
+    .readings span {
+      background: url('https://www.intuitionlog.com/img/spritesLG.png') -0 -150px;
+    }
+    .circles span {
+      background: url('https://www.intuitionlog.com/img/spritesLG.png') -0 -75px;
+    }
+    .notes span {
+      background: url('https://www.intuitionlog.com/img/spritesLG.png') -0 -375px;
+    }
+    .settings span {
+      background: url('https://www.intuitionlog.com/img/spritesLG.png') -0 -450px;
+    }
+    .account span {
+      background: url('https://www.intuitionlog.com/img/spritesLG.png') -0 -0;
+    }
+    .logout span {
+      background: url('https://www.intuitionlog.com/img/spritesLG.png') -0 -225px;
+    }
+
+    .meditation,
+    .readings,
+    .circles,
+    .notes,
+    .settings,
+    .account,
+    .logout {
+      padding: 8% 0;
+    }
+  }
+}

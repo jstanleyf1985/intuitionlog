@@ -1,0 +1,23 @@
+<!-- Register page scripts -->
+<% if(url === 'https://www.intuitionlog.com/register') { %>
+    <script src='js/register.js'></script>
+  <% } else if(url === 'https://www.intuitionlog.com') { %>
+    <script src='js/login.js'></script>
+  <% } else if(
+    url === 'https://www.intuitionlog.com/passwordreset') { %>
+    <script src='js/pwreset.js'></script>
+  <% } else if(
+    url === 'https://www.intuitionlog.com/dashboard') { %>
+    <script src='js/jquery.js'></script>
+    <script src='js/chart.js'></script>
+    <script src='js/dashboard.js'></script>
+    
+  <% } else if(
+    url === 'https://www.intuitionlog.com/recoverusername') { %>
+    <script src='js/recoverusername.js'></script>
+  <% } else { %>
+
+  <% } %>
+
+</body>
+</html>

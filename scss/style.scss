@@ -1,0 +1,309 @@
+$dark: #113f67;
+$darkHover: #002d56;
+$medium: #226597;
+$light: #87c0cd;
+$lightHover: #76b0bc;
+$lightdark: #65909a;
+$lightdarkHover: #548089;
+$bright: #f3f9fb;
+$offWhite: #f1f1f1;
+$offBlack: #333333;
+$warning: rgba(255, 176, 176, 1);
+$warningHover: rgba(235, 156, 156, 1);
+$success: rgba(176, 255, 176, 1);
+$successHover: rgba(166, 245, 166, 1);
+
+/********** GLOSSARY 
+
+1: GENERAL
+2: FONTS
+3: BODY
+4: CONTENT
+5: MEDIA QUERIES
+*/
+
+/********* 1: GENERAL */
+.dark {background-color: $dark}
+.medium {background-color: $medium}
+.light {background-color: $light}
+.bright {background-color: $bright}
+.colorDark {color: $dark}
+.colorMedium {color: $medium}
+.colorLight {color: $light}
+.colorBright {color: $bright}
+.center {margin-left: auto; margin-right: auto}
+.block {display: block}
+.relative {position: relative}
+.hidden {display: none !important}
+.paddingZero {padding: 0}
+.marginZero {margin: 0 auto}
+
+/********* 2: FONTS */
+
+
+/********* 3: BODY */
+body {
+  background-color: $bright;
+  background-image: url('https://www.intuitionlog.com/img/loginbg.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0;
+  margin: 0;
+}
+
+/********* 4: CONTENT */
+#loginFormWrapper {
+  padding: 0;
+
+  #loginForm {
+    background-color: $light;
+    border-radius: 0.2rem;
+    box-shadow: 5px 5px 10px #444;
+    padding: 2rem;
+    border: 2px solid $dark;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $dark;
+
+
+    h1, h2, h3 {
+      text-align: center;
+    }
+  
+    div {
+      display: block;
+      width: 100%;
+      margin-top: 0.5rem;
+  
+      label, input {
+        display: inline-block;
+        border-radius: 0.2rem;
+        text-align: center;
+        padding: 0.2rem;
+        font-size: 1.2rem;
+      }
+      label {
+        width: 30%;
+        text-align: right;
+      }
+      input {
+        width: 60%;
+        text-align: left;
+        border-bottom: 1px solid $dark;
+        border-top: 1px solid transparent;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        background-color: transparent;
+        color: $medium;
+      }
+    }
+    button,
+    .blueBTN{
+      text-align: center;
+      padding: 0.5rem 0;
+      background-color: #f1f1f1;
+      color: #333;
+      width: 90%;
+      left: 5%;
+      position: relative;
+      border-radius: 0.2rem;
+      box-shadow: 3px 3px 5px #444;
+      border: 1px solid $dark;
+      display: block;
+      margin-top: 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      font-family: 'Arial', sans-serif;
+    }
+    button:hover,
+    .blueBTN:hover {
+      background-color: $dark;
+      color: #f1f1f1;
+      transition-duration: 0.2s;
+      width: 100%;
+      left: 0;
+      cursor: pointer;
+    }
+
+    #registerBTN {
+      margin-top: -35px;
+    }
+
+    #loginBTN .blueBTN {
+      margin-top: 0;
+    }
+  }
+  #accountRecovery {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  
+    .greyBTN {
+      text-align: center;
+        padding: 0.2rem 0;
+        background-color: #444;
+        color: #f1f1f1;
+        width: 44%;
+        position: relative;
+        border-radius: 0.2rem;
+        box-shadow: 3px 3px 5px #333;
+        border: 1px solid $dark;
+        display: inline-block;
+        font-size: 1rem;
+        text-decoration: none;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        margin-top: 0;
+        position: relative;
+        left: 5.5%;
+    }
+    .greyBTN:hover {
+      background-color: $offWhite;
+      color: #333;
+      transition-duration: 0.2s;
+      width: 44% !important;
+      cursor: pointer;
+    }
+  }
+}
+.errListContainer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li:nth-of-type(1) {
+  margin-top: 1rem;
+  }
+
+  li {
+  text-align: center;
+  background-color: $warning;
+  font-size: bold;
+  text-decoration: none;
+  list-style: none;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem
+  }
+  .successMsg {
+    background-color: $success;
+  }
+}
+.successListContainer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li:nth-of-type(1) {
+  margin-top: 1rem;
+  }
+
+  li {
+  text-align: center;
+  font-size: bold;
+  text-decoration: none;
+  list-style: none;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem
+  }
+
+  .successMsg {
+    background-color: $success;
+  }
+  .errMsg {
+    background-color: $warning;
+  }
+}
+
+
+
+/********* 5: MEDIA QUERIES */
+/* Bootstrap sizing media queries */
+@media only screen and (min-width: 1px) and (max-width: 575px) {
+  #loginFormWrapper {
+    width: 80%;
+    left: 10%;
+
+  label,
+  input {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    }
+  }
+  label {
+    background-color: $lightdark;
+  }
+  #loginFormWrapper #loginForm div input {
+    background-color: $bright;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  #loginFormWrapper {
+    width: 70%;
+    left: 15%;
+
+    label,
+    input {
+      display: block !important;
+      width: 100% !important;
+      text-align: center !important;
+    }
+    label {
+      background-color: $lightdark;
+    }
+  }
+  .errListContainer,
+  .successListContainer {
+    width: 70%;
+    left: 15%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #loginFormWrapper {
+    width: 60%;
+    left: 20%;
+  }
+  .errListContainer,
+  .successListContainer  {
+    width: 60%;
+    left: 20%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #loginFormWrapper{
+    width: 50%;
+  }
+  .errListContainer,
+  .successListContainer  {
+    width: 50%;
+    left: 25%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #loginFormWrapper,
+  .errListContainer,
+  .successListContainer  {
+    width: 40%;
+  }
+}

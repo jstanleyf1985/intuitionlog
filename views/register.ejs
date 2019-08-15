@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+<main>
+  <form id="registerForm" class="block center" action='/register' method='post'>
+    <h2>Register for IntuitionLog</h2>
+    <div class='input'>
+      <label for='username'>Username: </label>
+      <input type='text' id='username' name='username' placeholder='Enter username'>
+    </div>
+
+    <div class='input'>
+      <label for='password'>Password: </label>
+      <input type='password' id='password' name='password' placeholder='Enter password'>
+    </div>
+
+    <div class='input'>
+      <label for='confirmpass'>Confirm Password: </label>
+      <input type='password' id='confirmpass' name='confirmpass' placeholder='Confirm your password'>
+    </div>
+
+    <div class='input'>
+      <label for='email'>Email: </label>
+      <input type='email' id='email' name='email' placeholder='Enter your email address'>
+    </div>
+
+    <button type='submit' name='submit' value='submit'>Submit</button>
+
+    <div id='loginBTN'>
+      <a href='https://www.intuitionlog.com'>Return to Login</a>
+    </div>
+  </form>
+  <div class="errListContainer">
+    <% if(errMsg) { %>
+      <% if(errMsg == 'No Errors') {%>
+         <!-- Do Nothing -->
+      <% } else { %>
+        <ul>
+          <li class="errMsg"><%- errMsg %></li>
+        </ul>
+      <% } %>
+    <% } %>
+
+    <% if(errors) { %>
+      <ul>
+        <% errors.forEach(function(error) { %>
+          <li class="errMsg"><%- error.msg %></li>
+        <% }); %>
+      </ul>
+    <% } %>
+  </div>
+</main>
+<%- include('partials/footer') %>

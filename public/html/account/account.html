@@ -1,0 +1,161 @@
+<link id='accountCSS' type='text/css' rel='stylesheet' href='https://www.intuitionlog.com/css/account.css'></link>
+  <div id='accountPage'>
+    <section id='accountWrapper' class='center block'>
+      <form id='updateAccImg' method='post' action='https://www.intuitionlog.com/dashboard/accountupdateimg' enctype='multipart/form-data'>
+          <div id="accountHeader" class="center block">
+            <h1 class='center block'>Account Information</h1>
+          </div>
+
+          <div id='accountImgInfo' class='center block'>
+            <img src="#" alt="">
+          </div>
+
+          <div id='accountImgField' class='center block field'>
+              <input id='accountImgUpload' type='file' name='accountImg'>
+              <button>Select</button>
+              <button type='submit' name='submit' value='submit'>Update Image</button>
+          </div>
+  
+          
+      </form>
+
+      <form id='updateAcc' method='post' action='https://www.intuitionlog.com/dashboard/account'>
+    
+        <div class="contentWrapper">
+          <div id="accountUsernameInfo" class="center block info">
+              <span>Username: </span>
+              <span></span>
+            </div>
+
+            <div id="accountNameInfo" class="center block info">
+              <span>Name: &nbsp;&nbsp;</span>
+              <span>Name goes here</span>
+            </div>
+      
+            <div id='accountNameField' class='center block field'>
+                <label for='accountName'>Name: &nbsp;&nbsp;</label>
+                <input type='text' name='accountName' placeholder='John Smith'>
+                <span class="errMsg"></span>
+            </div>
+      
+            <div id="accountEmailInfo" class="center block info">
+                <span>Email: &nbsp;&nbsp;</span>
+                <span>Email goes here</span>
+            </div>
+    
+            <div id='accountEmailField' class='center block field'>
+                <label for='accountEmail'>Email: &nbsp;&nbsp;</label>
+                <input type='email' name='accountEmail' placeholder='johnsmith@example.com'>
+                <span class="errMsg"></span>
+            </div>
+      
+            <div id="accountAgeInfo" class="center block info">
+              <span>Age: &nbsp;&nbsp;</span>
+              <span>Value</span>
+            </div>
+    
+            <div id="accountAgeField" class="center block field">
+              <label for='accountAge'>Age: &nbsp;&nbsp;</label>
+              <input type='number' name='accountAge' min='0' max='150' placeholder='18'>
+              <span class="errMsg"></span>
+            </div>
+      
+            <div id="accountAddressInfo" class="center block info">
+              <span class='addrSpan1'>Address 1: &nbsp;&nbsp;</span>
+              <span class='addrSpan2'>Value</span>
+    
+              <span class='addrSpan1'>Address 2: &nbsp;&nbsp;</span>
+              <span class='addrSpan2'>Value</span>
+    
+              <span class='addrSpan1'>City: &nbsp;&nbsp;</span>
+              <span class='addrSpan2'>Value</span>
+    
+              <span class='addrSpan1'>State: &nbsp;&nbsp;</span>
+              <span class='addrSpan2'>Value</span>
+    
+              <span class='addrSpan1'>Zip: &nbsp;&nbsp;</span>
+              <span class='addrSpan2'>Value</span>
+            </div>
+    
+            <div id="accountAddressField" class="center block field">
+              <div id="address1Section">
+                  <label for='accountAddres1s'>Address 1: &nbsp;&nbsp;</label>
+                  <input id='accountAddress1' type='text' name='accountAddress1' placeholder=''>
+                  <span class="errMsg"></span>
+              </div>
+                
+              <div id="address2Section">
+                  <label for='accountAddress2'>Address 2: &nbsp;&nbsp;</label>
+                  <input id='accountAddress2' type='text' name='accountAddress2' placeholder=''>
+                  <span class="errMsg"></span>
+              </div>
+                
+              <div id="citySection">
+                  <label for='accountCity'>City: &nbsp;&nbsp;</label>
+                  <input id='accountCity' accounttype='text' name='accountCity' placeholder=''>
+                  <span class="errMsg"></span>
+              </div>
+                
+              <div id="stateSection">
+                  <label for='accountState'>State: &nbsp;&nbsp;</label>
+                  <input id='accountState' type='text' name='accountState' placeholder=''>
+                  <span class="errMsg"></span>
+              </div>
+                
+              <div id="zipSection">
+                  <label for='accountZip'>Zip: &nbsp;&nbsp;</label>
+                  <input id='accountZip' type='text' name='accountZip' placeholder=''>
+                  <span class="errMsg"></span>
+              </div>
+                
+            </div>
+        </div>
+        
+        <div class="contentWrapper contentWrapper2">
+          <div id="accountMedHrsInfo" class="center block info">
+            <span>Meditation Hours: &nbsp;&nbsp;</span>
+            <span>Value</span>
+          </div>
+    
+          <div id="accountMedComplInfo" class="center block info">
+            <span>Meditations Completed: &nbsp;&nbsp;</span>
+            <span>Value</span>
+          </div>
+    
+          <div id="accountBadgeCountInfo" class="center block info">
+            <span>Badges Earned: &nbsp;&nbsp;</span>
+            <span>Value</span>
+          </div>
+  
+          <div id="accountBadgeList" class="center block info">
+            <span>Badges list goes here &nbsp;&nbsp;</span>
+          </div>
+  
+          <div id="accountMedPChart" class="center block info">
+              Pie Chart will go here
+          </div>
+        </div>
+        
+        <!-- Errors go down here -->
+        <div id="accountErr">
+          
+        </div>
+
+        <!-- Errors go down here -->
+        <div id="accountSuccess">
+          
+        </div>
+
+        <button class='blueBTN' id='changeInfo' name='changeInfo' value='changeInfo'>Edit Information</button>
+        <button class="yellowBTN" id="resetInfo" name='reset' value='reset'>Reset</button>
+        <!-- End of form -->
+  
+      </form>
+    </section>
+  </div>
+  
+  <div id="buddyPage" style='display: none'>
+    <section id="buddyList">
+      <h1>Friend List</h1>
+    </section>
+  </div>

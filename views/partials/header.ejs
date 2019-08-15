@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="l_qkEG966wLw6yCmsXKZOr8PWLvAgvLhHytmWMiukV8" />
+    <meta property="og:url" content="https://www.intuitionlog.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="IntuitionLog.com" />
+    <meta property="og:description" content="IntuitionLog.com a web app for tracking your meditations" />
+    <meta property="og:image" content="https://scontent.fric1-1.fna.fbcdn.net/v/t1.0-9/58580586_196740161209093_6519941310890115072_n.png?_nc_cat=101&_nc_oc=AQmTL9mi_7ENM-3_DSzvSthE4xme3EQl0bZhUCxQWdca3PguugvPMpHi4JGqae3GAWM&_nc_ht=scontent.fric1-1.fna&oh=101961ccee4c15d7950803b124bfdb87&oe=5D7945EF" />
+    <meta property="og:image:width" content="477" />
+    <meta property="og:image:height" content="477" />
+    <meta property="og:site_name" content="IntuitionLog.com" />
+    <meta property="fb:app_id" content="724199488011026" />
+    <meta property="og:locale" content="en_US" />
+    <!-- Register page styling -->
+    <% if(url == 'https://www.intuitionlog.com/register') { %>
+      <link rel="stylesheet" type="text/css" href="css/register.css">
+    <% } else if(
+      url == 'https://www.intuitionlog.com' ||
+      url == 'https://www.intuitionlog.com/passwordsend' ||
+      url == 'https://www.intuitionlog.com/passwordreset') { %>
+      <link rel='stylesheet' type='text/css' href='css/style.css'>
+    <% } else if(url == 'https://www.intuitionlog.com/dashboard') { %>
+      <link rel='stylesheet' type='text/css' href='css/dashboard.css'>
+    <% } else if (url == 'https://www.intuitionlog.com/recoverusername') { %>
+      <link rel='stylesheet' type='text/css' href='css/recoverusername.css'>
+    <% } else { %>
+
+    <% } %>
+  </head>
+  <body class='bright'>
